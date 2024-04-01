@@ -3,10 +3,10 @@ local GUI = require("GUI")
 local system = require("System")
 
 -- Create a new application
-local application = GUI.application()
+local workspace = system.getWorkspace()
 
 -- Create a new window
-local window = application:addChild(GUI.titledWindow(50, 22, 60, 20, "Application", true))
+local window = workspace:addChild(GUI.titledWindow(50, 22, 60, 20, "Application", true))
 
 -- Create a new layout for the window
 local layout = window:addChild(GUI.layout(1, 2, window.width, window.height - 1, 1, 1))
@@ -25,7 +25,7 @@ for i = 1, 3 do
 end
 
 -- Draw the application
-application:draw(true)
+workspace:draw()
 
 -- Start the application
-application:start()
+workspace:start()
